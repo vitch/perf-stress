@@ -8,7 +8,7 @@ export default DS.Model.extend({
   items: Ember.computed('data', function(){
     var type = this;
     return this.store.filter('equipment_item', function(item) {
-      return item.get('data.type') == type.get('id');
+      return item.get('data.type') === type.get('id');
     });
   })
 });
